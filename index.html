@@ -104,11 +104,11 @@
             },
         ];
 
-        const productsInPhoto = products2.filter(item => item.photos && (item.photos).length > 0);
-        console.log(productsInPhoto);
+        const getProductsWithAPhoto = (object, keyObject) => object.filter(item => item[keyObject] && (item[keyObject].length > 0));
+        console.log(getProductsWithAPhoto(products2, 'photos'));
 
-        const productsPriceSort = products2.sort((a, b) => a.price - b.price);
-        console.log(productsPriceSort);
+        const getSortingProuctsByNumbersKey = (object, keyObject) => object.sort((a, b) => a[keyObject] - b[keyObject]);
+        console.log(getSortingProuctsByNumbersKey(products2, 'price'));
 
 
         // Task_5
@@ -126,6 +126,7 @@
         }
 
         const daysOfWeek = getObject(en, ru);
+        console.log(daysOfWeek);
 
     </script>
 </body>
